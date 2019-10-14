@@ -13,6 +13,6 @@ Sobre a elaboração do teste, utilizei Material do angular 8, fiz um SCSS limpo
 O jogo de cores do layout, utilizei de inspiração a paleta de cores do site oficial da adobe `https://color.adobe.com/pt/create`.
 
 ## O que você acha poderia fazer a mais ou diferente?
-Acredito que mais nada, fiz bastante coisa.
+Acredito que fiz bastante coisa e com calma, está bem organizado e estruturado.
 
 
