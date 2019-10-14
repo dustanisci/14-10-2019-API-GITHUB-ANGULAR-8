@@ -1,0 +1,13 @@
+$palette-colors: (
+  'theme' : (
+      1 : #d6eaff,
+      2 : #add6ff,
+      3 : #649eff,
+      4 : rgba(35, 90, 159, 0.5),
+      5 : #092642
+  ),
+);
+
+@function palette-color($type, $color) {
+  @return map-get(map-get($palette-colors, $type), $color);
+}

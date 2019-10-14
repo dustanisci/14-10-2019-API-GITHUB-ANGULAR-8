@@ -1,0 +1,57 @@
+<div class="grid-level1">
+  <div class="grid-level2">
+    <app-sphere class="sphere-top"></app-sphere>
+    <main class="grid-level3">
+
+      <div class="search">
+        <label>Search for a github user account</label>
+        <div class="input-button">
+          <mat-form-field>
+            <input #inputUserId matInput placeholder="User ID" (keyup.enter)="getGithubData(inputUserId.value)">
+          </mat-form-field>
+          <button (click)="getGithubData(inputUserId.value)">Search</button>
+        </div>
+      </div>
+
+      <div class="mat-table-github" *ngIf="dataSource.data.length">
+        <table mat-table [dataSource]="dataSource" matSort matSortActive="language" matSortDirection="asc" matSortDisableClear>
+          <ng-container matColumnDef="project">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Project </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="isPrivate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Private </th>
+            <td mat-cell *matCellDef="let element"> {{element.isPrivate}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="url">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> URL </th>
+            <td mat-cell *matCellDef="let element"> <a [href]="element.url" target="_blank">{{element.url}}</a></td>
+          </ng-container>
+
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="language">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Language </th>
+            <td mat-cell *matCellDef="let element"> {{element.language}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+          </tr>
+        </table>
+        <mat-paginator [pageSize]="6" [hidePageSize]="true" showFirstLastButtons></mat-paginator>
+        <ngx-spinner bdOpacity=0.9 bdColor="rgba(255, 255, 255, 0.8)" size="medium" color="#fff" type="square-loader"
+          [fullScreen]="false">
+          Loading...
+        </ngx-spinner>
+      </div>
+    </main>
+  </div>
+</div>
+
+<img src="../assets/img/github.png">

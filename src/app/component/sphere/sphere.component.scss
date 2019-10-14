@@ -1,0 +1,10 @@
+@import "palette/palette";
+
+div {
+    background: palette-color('theme', 4);
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    position: absolute;
+    border: 1px solid palette-color('theme', 5);
+}

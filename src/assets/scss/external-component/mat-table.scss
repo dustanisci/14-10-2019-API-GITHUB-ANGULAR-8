@@ -1,0 +1,15 @@
+.mat-table-github {
+  table {
+    width: 100%;
+    position: relative;
+
+    th,
+    td {
+      padding: 0 20px !important;
+    }
+
+    th {
+      font-weight: bolder;
+    }
+  }
+}
