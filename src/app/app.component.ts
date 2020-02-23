@@ -17,8 +17,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class AppComponent implements OnInit {
 
 
-  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
-  @ViewChild(MatSort, { static: false }) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   public displayedColumns: string[] = ['project', 'isPrivate', 'url', 'description', 'language'];
   public dataSource = new MatTableDataSource<GithubUser>();

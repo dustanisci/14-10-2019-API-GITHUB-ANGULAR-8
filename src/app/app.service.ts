@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IGithubUser, GithubUser } from './model/githubuser';
+import { GithubUser } from './model/githubuser';
 import { map } from 'rxjs/operators';
 import { environment } from './../environments/environment';
 import { ApiService } from './api/api.service';
@@ -15,15 +14,13 @@ export class AppService {
 
   public findAll(user: string): Observable<GithubUser[]> {
     return this.apiService.get(`${environment.github}/${user}/repos`).pipe(map(resp => resp.map(res => {
-        return new GithubUser(
-          res.name,
-          res.private,
-          res.html_url,
-          res.description,
-          res.language
-        );
-      })
-      ),
-    );
+      return new GithubUser(
+        res.name,
+        res.private,
+        res.html_url,
+        res.description,
+        res.language
+      );
+    })));
   }
 }
