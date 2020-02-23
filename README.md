@@ -1,4 +1,18 @@
-## Site de consulta - Github
-14/10/2019 - API GITHUB, onde é possível pesquisar repositórios por nome e ordenar por data, utilizado: Angular 8, SCSS, HTML 5, Javascript, Typescript, Material Design, Toastr e Spinner.
+# API GITHUB
 
-Este site pode ser consultado no endereço: https://dustanisci.github.io/14-10-2019-github-angular8-git-io/
+<b>Descrição:</b> Criado uma página que pesquisa todos os projetos do repositórios de um usuário do Github. Implementado uma tabela com listagem, ordenação e paginação.
+
+<b>Endereço de acesso:</b> https://dustanisci.github.io/search-github-repositories-angular9/
+
+<b>Tecnologias utilizadas:</b>
+<ul>
+  <li>Angular 9</li>
+  <li>HTML 5 </li>
+  <li>Material</li>
+  <li>SCSS / CSS 3</li>
+  <li>TypeScript</li>
+  <li>JavaScript</li>
+  <li>Toastr</li>
+  <li>Spinner</li>
+</ul>
+
