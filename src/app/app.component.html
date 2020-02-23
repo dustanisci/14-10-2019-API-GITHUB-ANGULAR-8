@@ -7,14 +7,14 @@
         <label>Search for a github user account</label>
         <div class="input-button">
           <mat-form-field>
-            <input #inputUserId matInput placeholder="User ID" (keyup.enter)="getGithubData(inputUserId.value)">
+            <input #inputUserId matInput placeholder="User ID" value="dustanisci" (keyup.enter)="getGithubData(inputUserId.value)">
           </mat-form-field>
           <button (click)="getGithubData(inputUserId.value)">Search</button>
         </div>
       </div>
 
       <div class="mat-table-github" *ngIf="dataSource.data.length">
-        <table mat-table [dataSource]="dataSource" matSort matSortActive="language" matSortDirection="asc" matSortDisableClear>
+        <table mat-table [dataSource]="dataSource" matSort matSortActive="language" matSortDirection="desc" matSortDisableClear>
           <ng-container matColumnDef="project">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Project </th>
             <td mat-cell *matCellDef="let element"> {{element.name}} </td>

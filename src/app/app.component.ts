@@ -14,7 +14,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
@@ -29,15 +29,18 @@ export class AppComponent {
     private spinner: NgxSpinnerService) {
   }
 
+  ngOnInit(): void {
+    this.getGithubData('dustanisci');
+  }
+
   public getGithubData(user: string): void {
     this.spinner.show();
-    this.httpService.findAll(user).subscribe(
-      (result: GithubUser[]) => {
-        this.dataSource = new MatTableDataSource<GithubUser>(result);
-        setTimeout(() => this.dataSource.paginator = this.paginator);
-        setTimeout(() => this.dataSource.sort = this.sort);
-        this.spinner.hide();
-      },
+    this.httpService.findAll(user).subscribe((result: GithubUser[]) => {
+      this.dataSource = new MatTableDataSource<GithubUser>(result);
+      setTimeout(() => this.dataSource.paginator = this.paginator);
+      setTimeout(() => this.dataSource.sort = this.sort);
+      this.spinner.hide();
+    },
       (error: HttpErrorResponse) => {
         this.toastr.error(
           error.status === 404 ? 'User Not Found' :
