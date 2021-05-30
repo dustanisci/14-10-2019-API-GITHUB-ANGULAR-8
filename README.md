@@ -13,6 +13,6 @@
   <li>TypeScript</li>
   <li>JavaScript</li>
   <li>Toastr</li>
-  <li>Spinner</li>
+  <li>Spinner</li> 
 </ul>
 
